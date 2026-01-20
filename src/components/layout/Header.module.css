@@ -1,0 +1,132 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--z-sticky);
+  background-color: transparent;
+  transition: var(--transition-all);
+}
+
+.header.scrolled {
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-sm);
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: var(--spacing-lg);
+  padding-bottom: var(--spacing-lg);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-size: var(--font-size-h4);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+  cursor: pointer;
+  z-index: var(--z-sticky);
+}
+
+.logoIcon {
+  font-size: 1.5rem;
+}
+
+.logoText {
+  font-family: var(--font-heading);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xl);
+}
+
+.navLink {
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text);
+  transition: var(--transition-base);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--spacing-sm) 0;
+}
+
+.navLink:hover {
+  color: var(--color-primary);
+}
+
+.navCta {
+  margin-left: var(--spacing-md);
+}
+
+.mobileMenuToggle {
+  display: none;
+  font-size: 1.5rem;
+  color: var(--color-text);
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: var(--z-sticky);
+}
+
+/* Mobile Styles */
+@media (max-width: 767px) {
+  .mobileMenuToggle {
+    display: block;
+  }
+
+  .nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 300px;
+    height: 100vh;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+    padding: var(--spacing-4xl) var(--spacing-xl);
+    background-color: var(--color-bg);
+    box-shadow: var(--shadow-2xl);
+    transition: right var(--transition-slow);
+  }
+
+  .navOpen {
+    right: 0;
+  }
+
+  .navLink {
+    width: 100%;
+    text-align: left;
+    padding: var(--spacing-md) 0;
+    font-size: var(--font-size-body-lg);
+  }
+
+  .navCta {
+    width: 100%;
+    margin-left: 0;
+    margin-top: var(--spacing-lg);
+  }
+
+  .navCta button {
+    width: 100%;
+  }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .nav {
+    gap: var(--spacing-lg);
+  }
+
+  .navLink {
+    font-size: var(--font-size-body-sm);
+  }
+}

@@ -1,0 +1,133 @@
+.hero {
+  position: relative;
+  padding-top: calc(var(--spacing-4xl) + 80px);
+  padding-bottom: var(--spacing-4xl);
+  background: linear-gradient(180deg, var(--color-bg-light) 0%, var(--color-bg) 100%);
+  overflow: hidden;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-3xl);
+  align-items: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+.headline {
+  font-size: var(--font-size-h1);
+  font-weight: var(--font-weight-extrabold);
+  line-height: var(--line-height-tight);
+  color: var(--color-text);
+  letter-spacing: -0.02em;
+}
+
+.highlight {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subheadline {
+  font-size: var(--font-size-body-lg);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-light);
+  max-width: 540px;
+}
+
+.cta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-lg);
+}
+
+.microcopy {
+  font-size: var(--font-size-body-sm);
+  color: var(--color-text-muted);
+  margin-top: var(--spacing-xs);
+}
+
+.visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heroImage {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+}
+
+.placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--color-primary-light), var(--color-secondary));
+  color: white;
+  gap: var(--spacing-lg);
+}
+
+.placeholderIcon {
+  font-size: 4rem;
+}
+
+.placeholderText {
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-semibold);
+  text-align: center;
+  padding: 0 var(--spacing-xl);
+}
+
+/* Tablet */
+@media (max-width: 1023px) {
+  .container {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-2xl);
+  }
+
+  .content {
+    text-align: center;
+    align-items: center;
+  }
+
+  .headline {
+    max-width: 600px;
+  }
+
+  .subheadline {
+    max-width: 500px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .hero {
+    padding-top: calc(var(--spacing-3xl) + 80px);
+    padding-bottom: var(--spacing-3xl);
+  }
+
+  .cta button {
+    width: 100%;
+  }
+
+  .placeholderIcon {
+    font-size: 3rem;
+  }
+
+  .placeholderText {
+    font-size: var(--font-size-h4);
+  }
+}
