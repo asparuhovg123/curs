@@ -1,0 +1,114 @@
+.faq {
+  padding: var(--spacing-4xl) 0;
+  background-color: var(--color-bg-light);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: var(--spacing-3xl);
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.title {
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+  margin-bottom: var(--spacing-md);
+}
+
+.description {
+  font-size: var(--font-size-body-lg);
+  color: var(--color-text-light);
+  line-height: var(--line-height-relaxed);
+}
+
+.accordion {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.item {
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: var(--transition-base);
+}
+
+.item:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-lg) var(--spacing-xl);
+  text-align: left;
+  font-size: var(--font-size-body-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+  cursor: pointer;
+  background: none;
+  border: none;
+  transition: var(--transition-base);
+}
+
+.question:hover {
+  color: var(--color-primary);
+}
+
+.icon {
+  flex-shrink: 0;
+  color: var(--color-primary);
+  transition: transform var(--transition-base);
+}
+
+.active .icon {
+  transform: rotate(180deg);
+}
+
+.answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--transition-slow);
+}
+
+.active .answer {
+  max-height: 500px;
+}
+
+.answer p {
+  padding: 0 var(--spacing-xl) var(--spacing-lg) var(--spacing-xl);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-light);
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .faq {
+    padding: var(--spacing-3xl) 0;
+  }
+
+  .header {
+    margin-bottom: var(--spacing-2xl);
+  }
+
+  .question {
+    padding: var(--spacing-md) var(--spacing-lg);
+    font-size: var(--font-size-body);
+  }
+
+  .answer p {
+    padding: 0 var(--spacing-lg) var(--spacing-md) var(--spacing-lg);
+    font-size: var(--font-size-body-sm);
+  }
+}
